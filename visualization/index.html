@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Smooth Community</title>
+        <!-- style -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css"/>  
+        <!-- online lib -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>  
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <!-- local lib -->
+        <script src="./jquery/jquery.js"></script>
+        <script src="./js/lib/L.D3SvgOverlay.js"></script>
+        
+        <script src="./js/mylib/leaflet_map.js"></script>
+
+
+    </head>
+    <body>
+        <div id="main" class="z-depth-2"></div>
+
+        <script type='text/javascript'>    
+            var leaflet_map = new leaflet_map();    // need to be after the div creation
+            
+            // draw airports
+            // var airports_file = '/Users/WANGYunzhe/Documents/Data/Flight/geojson/airports.geojson';
+            var airports_file = './data/geojson/airports.geojson';
+            leaflet_map.drawAirport(airports_file);
+
+            // draw routes
+            var routes_file = './data/csv/routes2008.csv';
+            leaflet_map.drawRoute(routes_file);
+
+        </script>
+    </body>
+</html>
